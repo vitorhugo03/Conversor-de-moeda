@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversor de Moedas</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <h1>Conversor de Moedas</h1>
+            <img src="moeda.jpg" alt="Moedas">
+
+            <input type="number" placeholder="Digite o valor" id="valorInput"> <!-- ID para facilitar a seleção -->
+
+            <label for="moedaDestino">Selecione a moeda de destino:</label>
+            <select id="moedaDestino">
+                <option value="USD">Dólar (USD)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="JPY">Iene (JPY)</option>
+                <option value="GBP">Libra (GBP)</option>
+            </select>
+
+            <button onclick="conversor()">Converter</button>
+            <p id="resultado"></p>
+        </div>
+    </div>
+</body>
+<script>
+    function conversor(){
+        const valor = document.querySelector("#valorInput").value; // Seleciona o input pelo ID
+        const moedaDestino = document.querySelector("#moedaDestino").value; // Seleciona a moeda de destino
+        let taxa;
+
+        // Definindo as taxas de câmbio em relação ao Real (BRL)
+        switch(moedaDestino) {
+            case 'USD':
+                taxa = 6.0; // 1 BRL = 6.0 USD
+                break;
+            case 'EUR':
+                taxa = 6.5; // 1 BRL = 6.5 EUR
+                break;
+            case 'JPY':
+                taxa = 0.056; // 1 BRL = 0.056 JPY
+                break;
+            case 'GBP':
+                taxa = 7.5; // 1 BRL = 7.5 GBP
+                break;
+            default:
+                taxa = 1; // Valor padrão (não deveria acontecer)
+        }
+
+        const valorConvertido = valor / taxa; // Converte o valor
+        const valorFormatado = valorConvertido.toFixed(2); // Formata o valor para duas casas decimais
+
+        const resultado = document.getElementById("resultado"); // Seleciona o elemento para mostrar o resultado
+        resultado.textContent = `O valor em ${moedaDestino} é ${valorFormatado}`; // Atualiza o conteúdo do elemento
+    }
+</script>
+</html>

@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+#container {
+    width: 100vw;  /* Largura total da tela */
+    height: 100vh; /* Altura total da tela */
+    background: aquamarine; /* Apenas para visualização */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+#container div {
+    background: white; /* Apenas para destaque */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Define uma largura fixa para o container */
+}
+
+img {
+    width: 70px;
+    height: 70px;
+    display: block; /* Faz a imagem se comportar como um bloco */
+    margin: 0 auto; /* Centraliza horizontalmente dentro da div */
+    margin-bottom: 15px; /* Adiciona margem abaixo da imagem */
+}
+
+input[type="number"], select {
+    margin-bottom: 15px; /* Adiciona margem abaixo do input e select */
+    padding: 10px; /* Adiciona preenchimento */
+    border: 1px solid #ccc; /* Adiciona uma borda suave */
+    border-radius: 5px; /* Arredonda os cantos */
+    width: 100%; /* Faz o input e select ocuparem toda a largura disponível */
+}
+
+label {
+    margin-bottom: 5px; /* Adiciona margem abaixo do label */
+    display: block; /* Faz o label se comportar como um bloco */
+}
+
+button {
+    padding: 10px; /* Adiciona preenchimento ao botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Arredonda os cantos do botão */
+    background-color: #4CAF50; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    width: 100%; /* Faz o botão ocupar toda a largura disponível */
+    margin-bottom: 15px; /* Adiciona margem abaixo do botão */
+}
+
+button:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
+}
